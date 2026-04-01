@@ -1,5 +1,12 @@
+import Header from "./Header";
+import MainComponent from "./MainComponent.jsx";
+
 export default function App() {
   return (
-      <h1>Hello world!</h1>
+    <>
+      <Header />
+      <MainComponent />
+    </>
+
   )
 }
