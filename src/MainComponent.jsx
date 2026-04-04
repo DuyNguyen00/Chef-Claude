@@ -5,12 +5,8 @@ import IngredientsList from "./IngredientsList"
 export default function MainComponent() {
     // State to hold the list of ingredients
     const [ingredients, setIngredients] = React.useState([])
-    const [recipeShown , setRecipeShown] = React.useState(false)
 
-    // Create list items for each ingredient in the state
-    const ingredientsListItems = ingredients.map(ingredient => (
-        <li key={ingredient}>{ingredient}</li>
-    ))
+    const [recipeShown, setRecipeShown] = React.useState(false)
 
     function toggleRecipeShown() {
         setRecipeShown(prevShown => !prevShown)
@@ -35,7 +31,8 @@ export default function MainComponent() {
                 <button>Add Ingredients</button>
             </form>
             {
-                ingredients.length > 0 && <IngredientsList />
+                ingredients.length > 0 && 
+                <IngredientsList ingredients={ingredients} toggleRecipeShown={toggleRecipeShown} />
             }
             {
                 recipeShown && <ClaudeRecipe />
